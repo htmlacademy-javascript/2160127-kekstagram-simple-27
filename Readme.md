@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм (простой)»
 
-* Студент: [Анур Фаттахов](https://up.htmlacademy.ru/javascript/27/user/2160127).
-* Наставник: `Неизвестно`.
+- Студент: [Анур Фаттахов](https://up.htmlacademy.ru/javascript/27/user/2160127).
+- Наставник: [Максим Прусаков](https://htmlacademy.ru/profile/hikikomori).
 
 ---
 
