@@ -13,12 +13,6 @@ const getRandomNumber = (firstNumder, secondNumder) => {
   }
 };
 
-const isMaxLengthStr = (str, maxLength) => {
-  if (maxLength >= str.length) {
-    return true;
-  } else {
-    return false;
-  }
-};
+const isMaxLengthStr = (str, maxLength) => maxLength >= str.length;
 getRandomNumber(-20, -60);
 isMaxLengthStr('sdsd', 3);
