@@ -41,9 +41,9 @@ getRandomId();
 const getrandonElementArray = (array) =>
   array[getRandomNumber(0, array.length - 1)];
 
-const createPhoto = (index) => ({
-  id: index,
-  url: `photos/${index}.jpg`,
+const createPhoto = (id) => ({
+  id,
+  url: `photos/${id}.jpg`,
   description: Array.from({ length: getRandomNumber(2, 3) }, () =>
     getrandonElementArray(DESCRIPTION)
   )
