@@ -15,7 +15,7 @@ const DESCRIPTIONS = [
   'Боксёр',
   'Потеряшка'
 ];
-const COUNT_LIKES = {
+const CountLikes = {
   MIN: 15,
   MAX: 200
 };
@@ -47,7 +47,7 @@ const createPhoto = (id) => ({
   )
     .map((x) => `#${x}`)
     .join(' '),
-  likes: getRandomNumber(COUNT_LIKES.MIN, COUNT_LIKES.MAX),
+  likes: getRandomNumber(CountLikes.MIN, CountLikes.MAX),
   comments: getRandomNumber(COUNT_COMMENTS.MIN, COUNT_COMMENTS.MAX)
 });
 const createArrayObjects = () =>
