@@ -19,7 +19,7 @@ const CountLikes = {
   MIN: 15,
   MAX: 200
 };
-const COUNT_COMMENTS = {
+const CountComments = {
   MIN: 0,
   MAX: 200
 };
@@ -48,7 +48,7 @@ const createPhoto = (id) => ({
     .map((x) => `#${x}`)
     .join(' '),
   likes: getRandomNumber(CountLikes.MIN, CountLikes.MAX),
-  comments: getRandomNumber(COUNT_COMMENTS.MIN, COUNT_COMMENTS.MAX)
+  comments: getRandomNumber(CountComments.MIN, CountComments.MAX)
 });
 const createArrayObjects = () =>
   Array.from({ length: COUNT_OBJECTS }, (_, photoIndex) =>
