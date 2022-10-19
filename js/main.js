@@ -1,5 +1,5 @@
-const COUNT_OBJECT = 25;
-const DESCRIPTION = [
+const COUNT_OBJECTS = 25;
+const DESCRIPTIONS = [
   'Музыка',
   'Юмор',
   'Фото',
@@ -36,8 +36,6 @@ const isMaxLengthStr = (str, maxLength) => maxLength >= str.length;
 getRandomNumber(-20, -60);
 isMaxLengthStr('sdsd', 3);
 
-const getRandomId = () => getRandomNumber(1, COUNT_OBJECT);
-getRandomId();
 const getrandonElementArray = (array) =>
   array[getRandomNumber(0, array.length - 1)];
 
@@ -45,7 +43,7 @@ const createPhoto = (index) => ({
   id: index,
   url: `photos/${index}.jpg`,
   description: Array.from({ length: getRandomNumber(2, 3) }, () =>
-    getrandonElementArray(DESCRIPTION)
+    getrandonElementArray(DESCRIPTIONS)
   )
     .map((x) => `#${x}`)
     .join(' '),
@@ -53,7 +51,7 @@ const createPhoto = (index) => ({
   comments: getRandomNumber(COUNT_COMMENTS.MIN, COUNT_COMMENTS.MAX)
 });
 const createArrayObjects = () =>
-  Array.from({ length: COUNT_OBJECT }, (_, photoIndex) =>
+  Array.from({ length: COUNT_OBJECTS }, (_, photoIndex) =>
     createPhoto(photoIndex + 1)
   );
 createArrayObjects();
