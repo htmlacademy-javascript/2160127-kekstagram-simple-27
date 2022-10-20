@@ -1,4 +1,3 @@
-import './data.js';
-import { createArrayObjects } from './util.js';
+import { createArrayObjects } from './data.js';
 
 createArrayObjects();
