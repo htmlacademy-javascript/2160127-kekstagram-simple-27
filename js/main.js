@@ -1,3 +1,1 @@
-import { createArrayObjects } from './data.js';
-
-createArrayObjects();
+import './render.js';
