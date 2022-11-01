@@ -5,15 +5,14 @@ const pictureTempldate = document
   .querySelector('#picture')
   .content.querySelector('a');
 
-const pictureSection = document.querySelector('.pictures, .container');
-const picturePlace = pictureSection.querySelector('.pictures__title');
-picturePlace.classList.remove('visually-hidden');
+const pictureSection = document.querySelector('.pictures');
 const picturesFragment = document.createDocumentFragment();
 
 otherUsersPhotos.forEach(({ url, description, likes, comments }) => {
   const pictureElem = pictureTempldate.cloneNode(true);
-  pictureElem.querySelector('img').src = url;
-  pictureElem.querySelector('img').alt = description;
+  const pictureImg = pictureElem.querySelector('img');
+  pictureImg.src = url;
+  pictureImg.alt = description;
   pictureElem.querySelector('.picture__comments').textContent = likes;
   pictureElem.querySelector('.picture__likes').textContent = comments;
   picturesFragment.appendChild(pictureElem);
