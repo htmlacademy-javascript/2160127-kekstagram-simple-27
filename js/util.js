@@ -12,4 +12,13 @@ const isMaxLengthStr = (str, maxLength) => maxLength >= str.length;
 const getRandomElementArray = (array) =>
   array[getRandomNumber(0, array.length - 1)];
 
-export { getRandomElementArray, isMaxLengthStr, getRandomNumber };
+const isEscapeKey = (evt) => evt.key === 'Escape';
+const isEnterKey = (evt) => evt.key === 'Enter';
+
+export {
+  getRandomElementArray,
+  isMaxLengthStr,
+  getRandomNumber,
+  isEscapeKey,
+  isEnterKey
+};
