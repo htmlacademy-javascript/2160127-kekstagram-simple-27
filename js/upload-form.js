@@ -1,4 +1,4 @@
-import { isEscapeKey, isEnterKey } from './util.js';
+import { isEscapeKey } from './util.js';
 const uploadFile = document.querySelector('#upload-file');
 const closeButton = document.querySelector('#upload-cancel');
 
@@ -10,40 +10,32 @@ const pristine = new Pristine(popupForm, {
   errorTextParent: 'img-upload__text',
   errorTextClass: 'img-upload__text__error-text'
 });
-popupForm.addEventListener('submit', () => {
+
+body.addEventListener('submit', (evt) => {
+  evt.preventDefault();
   pristine.validate();
 });
 
-const onPopupEscKeydown = (evt) => {
+const onDocumentKeydown = (evt) => {
   if (isEscapeKey(evt)) {
     evt.preventDefault();
     popupClose();
   }
 };
 
-function clearUploadFile() {
-  uploadFile.value = '';
-}
-
 function popupOpen() {
   popupForm.classList.remove('hidden');
   body.classList.add('modal-open');
-  document.addEventListener('keydown', onPopupEscKeydown);
+  document.addEventListener('keydown', onDocumentKeydown);
 }
 function popupClose() {
   popupForm.classList.add('hidden');
-  clearUploadFile();
-  document.removeEventListener('keydown', onPopupEscKeydown);
+  uploadFile.value = '';
+  document.removeEventListener('keydown', onDocumentKeydown);
 }
 
 closeButton.addEventListener('click', () => {
   popupClose();
-});
-
-closeButton.addEventListener('keydown', (evt) => {
-  if (isEnterKey(evt)) {
-    popupClose();
-  }
 });
 
 uploadFile.addEventListener('change', () => {

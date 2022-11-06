@@ -211,10 +211,10 @@
                       class="text__description"
                       name="description"
                       placeholder="Ваш комментарий..."
-                      minlength="20"
-                      maxlength="140"
-                      required
-                      data-pristine-required-message="Обязательное поле"
+                      data-pristine-required
+                      data-pristine-required-message="Обязательное поле!!!"
+                      data-pristine-minlength="20"
+                      data-pristine-maxlength="140"
                       data-pristine-minlength-message="Минимальная длина 20 символа"
                       data-pristine-maxlength-message="Максимальная длина 140 символов"
                     ></textarea>
@@ -236,8 +236,8 @@
 
         <!-- Здесь будут изображения других пользователей -->
       </section>
-      <script src="js/main.js" type="module"></script>
       <script src="vendor/pristine/pristine.min.js"></script>
+      <script src="js/main.js" type="module"></script>
     </main>
 
     <footer class="page-footer container">
