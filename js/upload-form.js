@@ -3,7 +3,7 @@ const uploadFile = document.querySelector('#upload-file');
 const closeButton = document.querySelector('#upload-cancel');
 
 const popupForm = document.querySelector('.img-upload__overlay');
-const body = document.querySelector('body');
+const body = document.body;
 
 const pristine = new Pristine(popupForm, {
   classTo: 'img-upload__text',
