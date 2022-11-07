@@ -12,8 +12,10 @@ const pristine = new Pristine(popupForm, {
 });
 
 body.addEventListener('submit', (evt) => {
-  evt.preventDefault();
-  pristine.validate();
+  const isValid = pristine.validate();
+  if (!isValid) {
+    evt.preventDefault();
+  }
 });
 
 const onDocumentKeydown = (evt) => {
