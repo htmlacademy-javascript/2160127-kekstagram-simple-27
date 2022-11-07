@@ -1,6 +1,7 @@
 import { isEscapeKey } from './util.js';
 const uploadFile = document.querySelector('#upload-file');
 const closeButton = document.querySelector('#upload-cancel');
+const formImg = document.querySelector('#upload-select-image');
 
 const popupForm = document.querySelector('.img-upload__overlay');
 const body = document.body;
@@ -11,7 +12,7 @@ const pristine = new Pristine(popupForm, {
   errorTextClass: 'img-upload__text__error-text'
 });
 
-body.addEventListener('submit', (evt) => {
+formImg.addEventListener('submit', (evt) => {
   const isValid = pristine.validate();
   if (!isValid) {
     evt.preventDefault();
