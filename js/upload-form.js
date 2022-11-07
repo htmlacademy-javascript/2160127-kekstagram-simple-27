@@ -6,7 +6,7 @@ const formImg = document.querySelector('#upload-select-image');
 const popupForm = document.querySelector('.img-upload__overlay');
 const body = document.body;
 
-const pristine = new Pristine(popupForm, {
+const pristine = new Pristine(formImg, {
   classTo: 'img-upload__text',
   errorTextParent: 'img-upload__text',
   errorTextClass: 'img-upload__text__error-text'
