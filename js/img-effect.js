@@ -39,7 +39,7 @@ const EFFECTS = [
     style: 'blur',
     step: 0.1,
     min: 0,
-    max: 1,
+    max: 3,
     unit: 'px'
   },
   {
@@ -89,7 +89,6 @@ const onSliderUpdate = () => {
   const sliderValue = sliderElement.noUiSlider.get();
 
   image.style.filter = `${chosenEffect.style}(${sliderValue}${chosenEffect.unit})`;
-
   image.classList.add(`effects__preview--${chosenEffect.name}`);
   effectLevelValue.value = sliderValue;
 };
