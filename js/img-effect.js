@@ -1,63 +1,58 @@
-const image = document.querySelector('.img-upload__preview');
+const image = document.querySelector('.img-upload__preview img');
 const form = document.querySelector('.img-upload__form');
 const sliderElement = document.querySelector('.effect-level__slider');
 const effectLevelValue = document.querySelector('.effect-level__value');
+const effectLevel = document.querySelector('.img-upload__effect-level');
 
-const EFFECTS = [
-  {
-    name: 'none',
+const EFFECTS = {
+  none: {
     step: 1,
     min: 0,
     max: 100
   },
-  {
-    name: 'chrome',
+  chrome: {
     style: 'grayscale',
     step: 0.1,
     min: 0,
     max: 1,
     unit: ''
   },
-  {
-    name: 'sepia',
+  sepia: {
     style: 'sepia',
     step: 0.1,
     min: 0,
     max: 1,
     unit: ''
   },
-  {
-    name: 'marvin',
+  marvin: {
     style: 'invert',
     step: 1,
     min: 0,
     max: 100,
     unit: '%'
   },
-  {
-    name: 'phobos',
+  phobos: {
     style: 'blur',
     step: 0.1,
     min: 0,
     max: 3,
     unit: 'px'
   },
-  {
-    name: 'heat',
+  heat: {
     style: 'brightness',
     step: 0.1,
     min: 1,
     max: 3,
     unit: ''
   }
-];
+};
 
-const DEFAULT_EFFECT = EFFECTS[0];
+const DEFAULT_EFFECT = EFFECTS.none;
 let chosenEffect = DEFAULT_EFFECT;
 const isDefault = () => chosenEffect === DEFAULT_EFFECT;
 
 const updateSlider = () => {
-  sliderElement.classList.remove('hidden');
+  effectLevel.classList.remove('hidden');
   sliderElement.noUiSlider.updateOptions({
     range: {
       min: chosenEffect.min,
@@ -67,7 +62,7 @@ const updateSlider = () => {
     start: chosenEffect.max
   });
   if (isDefault()) {
-    sliderElement.classList.add('hidden');
+    effectLevel.classList.add('hidden');
   }
 };
 
@@ -75,13 +70,12 @@ const onFormChange = (evt) => {
   if (!evt.target.classList.contains('effects__radio')) {
     return;
   }
-  chosenEffect = EFFECTS.find((effect) => effect.name === evt.target.value);
+  chosenEffect = EFFECTS[evt.target.value];
   updateSlider();
 };
 
 const onSliderUpdate = () => {
   image.style.filter = 'none';
-  image.className = '';
   effectLevelValue.value = '';
   if (isDefault()) {
     return;
