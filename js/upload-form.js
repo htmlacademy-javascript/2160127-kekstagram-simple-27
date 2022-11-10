@@ -1,4 +1,7 @@
 import { isEscapeKey } from './util.js';
+import { resetImg } from './img-resize.js';
+import { resetEffects } from './img-effect.js';
+
 const uploadFile = document.querySelector('#upload-file');
 const closeButton = document.querySelector('#upload-cancel');
 const formImg = document.querySelector('#upload-select-image');
@@ -34,6 +37,8 @@ function popupClose() {
   popupForm.classList.add('hidden');
   uploadFile.value = '';
   document.removeEventListener('keydown', onDocumentKeydown);
+  resetImg();
+  resetEffects();
 }
 
 closeButton.addEventListener('click', () => {
