@@ -45,15 +45,15 @@ const pristine = new Pristine(formImg, {
   errorTextClass: 'img-upload__text__error-text'
 });
 
-function blockSubmitButton() {
+const blockSubmitButton = () => {
   uploadSubmit.disabled = true;
   uploadSubmit.textContent = 'Публикация отправлена ...';
-}
+};
 
-function unblockSubmitButton() {
+const unblockSubmitButton = () => {
   uploadSubmit.disabled = false;
   uploadSubmit.textContent = 'Опубликовать';
-}
+};
 
 function getSuccessMesage() {
   const successFragment = document.createDocumentFragment();
