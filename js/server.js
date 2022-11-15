@@ -5,9 +5,7 @@ import { showAlert } from './alert-message.js';
 const getData = (onSuccess) => {
   fetch(URL_PHOTOS)
     .then((response) => response.json())
-    .then((photo) => {
-      onSuccess(photo);
-    })
+    .then(onSuccess)
     .catch((err) => {
       showAlert(`Ошибка сервера: ${err}`);
     });
