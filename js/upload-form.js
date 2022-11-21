@@ -71,6 +71,7 @@ const getMesage = (status) => {
       element.remove();
       document.removeEventListener('keydown', onMesageEscKeydown);
       document.removeEventListener('click', onMesageDocument);
+
       if (status === 'error') {
         document.addEventListener('keydown', onDocumentKeydown);
       }
