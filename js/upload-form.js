@@ -25,11 +25,11 @@ const onDocumentKeydown = (evt) => {
   }
 };
 
-function popupOpen() {
+const popupOpen = () => {
   popupForm.classList.remove('hidden');
   body.classList.add('modal-open');
   document.addEventListener('keydown', onDocumentKeydown);
-}
+};
 function popupClose() {
   popupForm.classList.add('hidden');
   uploadFile.value = '';
@@ -55,7 +55,7 @@ const unblockSubmitButton = () => {
   uploadSubmit.textContent = 'Опубликовать';
 };
 
-function getSuccessMesage() {
+const getSuccessMesage = () => {
   const successFragment = document.createDocumentFragment();
   const clonedMessageSuccessTemplate =
     messageSuccessTemplateElement.cloneNode(true);
@@ -101,9 +101,9 @@ function getSuccessMesage() {
     document.removeEventListener('keydown', onMesageEscKeydown);
     document.removeEventListener('click', onMesageDocument);
   });
-}
+};
 
-function getErrorMesage() {
+const getErrorMesage = () => {
   document.removeEventListener('keydown', onDocumentKeydown);
 
   const fragment = new DocumentFragment();
@@ -146,7 +146,7 @@ function getErrorMesage() {
     document.removeEventListener('keydown', onMesageEscKeydown);
     document.removeEventListener('click', onMesageDocument);
   });
-}
+};
 
 const loadPhotoFormSubmit = () => {
   formImg.addEventListener('submit', (evt) => {
