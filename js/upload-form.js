@@ -47,7 +47,7 @@ const unblockSubmitButton = () => {
   uploadSubmit.textContent = 'Опубликовать';
 };
 
-const getMesage = (status) => {
+const getMessage = (status) => {
   const messageTemplateElement = document
     .querySelector(`#${status}`)
     .content.querySelector(`.${status}`);
@@ -63,37 +63,36 @@ const getMesage = (status) => {
   const element = document.querySelector(`.${status}`);
   const btnCloseElement = element.querySelector(`.${status}__button`);
 
-  const onMesageEscKeydown = (evt) => {
+  const onMessageEscKeydown = (evt) => {
     if (isEscapeKey(evt)) {
       evt.preventDefault();
       element.remove();
-      document.removeEventListener('keydown', onMesageEscKeydown);
-      document.removeEventListener('click', onMesageDocument);
-
+      document.removeEventListener('keydown', onMessageEscKeydown);
+      document.removeEventListener('click', onMessageDocument);
       if (status === 'error') {
         document.addEventListener('keydown', onDocumentKeydown);
       }
     }
   };
-  document.addEventListener('keydown', onMesageEscKeydown);
+  document.addEventListener('keydown', onMessageEscKeydown);
 
-  function onMesageDocument(evt) {
+  function onMessageDocument(evt) {
     if (evt.target === element) {
       evt.preventDefault();
       element.remove();
-      document.removeEventListener('keydown', onMesageEscKeydown);
-      document.removeEventListener('click', onMesageDocument);
+      document.removeEventListener('keydown', onMessageEscKeydown);
+      document.removeEventListener('click', onMessageDocument);
       if (status === 'error') {
         document.addEventListener('keydown', onDocumentKeydown);
       }
     }
   }
-  document.addEventListener('click', onMesageDocument);
+  document.addEventListener('click', onMessageDocument);
   btnCloseElement.addEventListener('click', (evt) => {
     evt.preventDefault();
     element.remove();
-    document.removeEventListener('keydown', onMesageEscKeydown);
-    document.removeEventListener('click', onMesageDocument);
+    document.removeEventListener('keydown', onMessageEscKeydown);
+    document.removeEventListener('click', onMessageDocument);
   });
 };
 
@@ -110,10 +109,10 @@ const loadPhotoFormSubmit = () => {
           resetEffects();
           resetImg();
           unblockSubmitButton();
-          getMesage('success');
+          getMessage('success');
         },
         () => {
-          getMesage('error');
+          getMessage('error');
           unblockSubmitButton();
         },
         new FormData(evt.target)
