@@ -31,7 +31,6 @@ function popupClose() {
   resetEffects();
   formImg.reset();
 }
-
 const pristine = new Pristine(formImg, {
   classTo: 'img-upload__text',
   errorTextParent: 'img-upload__text',
@@ -56,7 +55,6 @@ const getMesage = (status) => {
   if (status === 'error') {
     document.removeEventListener('keydown', onDocumentKeydown);
   }
-
   const fragment = new DocumentFragment();
   const clonedMessageTemplate = messageTemplateElement.cloneNode(true);
   fragment.append(clonedMessageTemplate);
