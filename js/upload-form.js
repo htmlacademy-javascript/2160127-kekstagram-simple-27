@@ -100,7 +100,6 @@ const getMesage = (status) => {
 const loadPhotoFormSubmit = () => {
   formImg.addEventListener('submit', (evt) => {
     evt.preventDefault();
-
     const isValid = pristine.validate();
 
     if (isValid) {
