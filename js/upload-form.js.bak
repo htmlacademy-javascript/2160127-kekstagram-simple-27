@@ -67,8 +67,14 @@ const getMessage = (status) => {
     if (isEscapeKey(evt)) {
       evt.preventDefault();
       element.remove();
+<<<<<<< HEAD
+      document.removeEventListener('keydown', onMesageEscKeydown);
+      document.removeEventListener('click', onMesageDocument);
+
+=======
       document.removeEventListener('keydown', onMessageEscKeydown);
       document.removeEventListener('click', onMessageDocument);
+>>>>>>> 37d7088 (fix Mesage on Message)
       if (status === 'error') {
         document.addEventListener('keydown', onDocumentKeydown);
       }
